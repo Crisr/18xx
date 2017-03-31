@@ -3,6 +3,7 @@ var CB = require('../Core/core_bit');
 
 
 test('Core Bit tests', function (TC) { 
-        var CBit = new CB();          
+        const CBit = new CB();      
+        TC.equal(typeof(CBit.GetLocation()), "object", "Should be an Object")
         TC.end();
 });
