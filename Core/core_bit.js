@@ -1,6 +1,6 @@
 'use strict'
 class CBit {       
-    constructor () {
+    constructor () {        
         this.Location = {};
         this.previousLocation = {};    
         }
@@ -10,6 +10,12 @@ class CBit {
     SetLocation (s) {this.Location = s}
     
     GetPreviousLocation () {return this.previousLocation}
+
+    printInfo () {
+        for (let vname in this) {
+         console.log(`[${this.constructor.name}] ${vname}`);
+        }
+    }
    
 } 
 

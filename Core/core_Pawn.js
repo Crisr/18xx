@@ -1,13 +1,16 @@
 'use strict'
 var cBit = require('./core_bit.js')
 
-function cPawn(o) {
-    this.pColor         = "white";    
-    this.Owner          = o !== undefined ? o : 'AI';
-    this.previousOwner  = '';
-   
-    return {
-        GetColor: function () {return pColor},
-        SetColor: function (s) {pColor = s}
+class cPawn extends cBit {
+    constructor (o) {
+        super();
+        this.pColor         = "white";    
+        this.Owner          = o !== undefined ? o : 'AI';
+        this.previousOwner  = '';
     }
+        
+    GetColor () {return pColor}
+    
+    SetColor (s) {pColor = s}
+        
 }
