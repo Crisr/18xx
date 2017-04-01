@@ -21,7 +21,7 @@ class cPawn extends cBit {
     /**
      * Sets the color of the pawn
      * 
-     * @param {string} s the color of the pawn
+     * @param {string} s the color of the pawn to a string value
      * 
      * @memberOf cPawn
      */
