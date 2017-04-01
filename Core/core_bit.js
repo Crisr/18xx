@@ -9,22 +9,53 @@ class CBit {
     // where is this located?
     GetLocation () {return this.Location}    
     
+   
+    /**
+     * 
+     * 
+     * @param {object} s - object describing the location of the boardgame bit, usually the map, hex grid, etc
+     * 
+     * @memberOf CBit
+     */
     SetLocation (s) {
-   /**
-    * @param {string}  s - An object param.
-    */
         this.Location = s}    
    
     GetPreviousLocation () {return this.previousLocation}
 
-    // AI related functions
-    SetAIValue(v) {this.AIValue = s}
+    
+    /**
+     * Sets the AI value for this boardgame piece. Between 0..1, 1 beeing the most valuable
+     * 
+     * @param {Number} v 
+     * 
+     * @memberOf CBit
+     */
+    SetAIValue(v) {
+        if (isNaN(v) == true) {return `SetAIValue - value is not a number`};
+        if (v>1 || v<0) {return `SetAIValue - value should be between 0..1`}
+        this.AIValue = v
+    }
+    
+    GetAIValue(v) {
+        return this.AIValue;
+    }
 
-
-    printInfo () {
+    /**
+     * Provides basic output information for the boardgame bit
+     * 
+     * 
+     * @memberOf CBit
+     */
+    getInfo () {
+        let result = [];
         for (let vname in this) {
-         console.log(`[${this.constructor.name}] ${vname}`);
+         result.push(
+             {"ID":this.constructor.name, 
+             "Property":vname, 
+             "Value": this[vname]}
+             )
         }
+        return result
     }
    
 } 

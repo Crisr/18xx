@@ -14,3 +14,4 @@ class cPawn extends cBit {
     SetColor (s) {pColor = s}
         
 }
+module.exports = cPawn;
