@@ -9,8 +9,22 @@ class cPawn extends cBit {
         this.previousOwner  = '';
     }
         
+    /**
+     * Gets the color of the pawn
+     * 
+     * @returns 
+     * string
+     * @memberOf cPawn
+     */
     GetColor () {return pColor}
     
+    /**
+     * Sets the color of the pawn
+     * 
+     * @param {string} s the color of the pawn
+     * 
+     * @memberOf cPawn
+     */
     SetColor (s) {pColor = s}
         
 }
