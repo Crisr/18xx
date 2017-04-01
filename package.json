@@ -5,6 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "node index.js"
+  },  
+  "compilerOptions": {
+        "target": "ES6",
+        "module": "commonjs"
   },
   "keywords": [
     "AI",
