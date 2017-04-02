@@ -13,7 +13,7 @@ class Bill extends cBit {
     constructor(o, bill_value) {
         super();
         if (isNaN(bill_value)==true) {return log.error(`Bill Value must be a number`)}
-        if (parameters<1) {return log.error('Bill constructor must have 2 parameters')}
+        if (arguments.length<2) {return log.error('Bill constructor must have 2 parameters')}
         this.billVal        = bill_value;       
         this.Owner          = (typeof o !== 'undefined') ?  o : 'GAME';      
     }
@@ -39,9 +39,9 @@ class Bank extends cBit {
      * 
      * @memberOf Bank
      */
-    addBills (o='GAME', no, val) {
+    createBills (o='GAME', no, val) {
         let arr = [];  
-        let o = (typeof o !== 'undefined') ?  o : 'GAME';        
+        o = (typeof o !== 'undefined') ?  o : 'GAME';        
         if (isNaN(no)==true) {return log.error('Bank.addBills must have number of bills specified')}
         for (let i=0; i<no; i++) {
             let newBill = new Bill(o,val);
@@ -49,6 +49,19 @@ class Bank extends cBit {
         }
         return arr
     }
+
+    /**
+     * Adds an array of Bills to the BankVault
+     * 
+     * @param {array} [barr=[]] must be an array of Bills. Use Bank.createBills
+     * 
+     * @memberOf Bank
+     */
+    addBills2Bank (barr =[]) {
+        if (typeof(barr) !== 'array') {log.error('only arrays of type Bill will be added to the bank, use Bank.createBills')};
+        this.BankVault.concat(barr);
+    }
+
 }
 
 module.exports = {Bank:Bank, Bill:Bill};

@@ -14,7 +14,7 @@ test('Core Bit tests', function (TC) {
 
 test('Finance tests', function (TC) {        
         const myBank = new Finance.Bank();      
-        const Bills5 = myBank.addBills(`GAME`, 5, 1);
+        const Bills5 = myBank.createBills(`GAME`, 5, 1);
         
         // TC.equal(typeof(CBit.GetLocation()), "object", "Should be an Object");
         // TC.equal(typeof(CBit.SetAIValue(2)), "string", "Error, value 2 is not valid, 0..1 is valid");
