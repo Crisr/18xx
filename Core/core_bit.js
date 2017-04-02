@@ -1,10 +1,12 @@
 'use strict'
+const log = require('winston');
 // object CBit is base object for all gameboard physical bits that can be put on the table. Pawns, Cards, maps, they all derive from this object
 class CBit {       
-    constructor () {        
-        this.Location = {};
-        this.previousLocation = {};
-        this.AIValue = 0;
+    constructor (o) {        
+        this.Location           = {};
+        this.previousLocation   = {};
+        this.AIValue            = 0;
+        this.Owner              = o !== undefined ? o : 'GAME';
         }
     // where is this located?
     GetLocation () {return this.Location}    
@@ -31,8 +33,8 @@ class CBit {
      * @memberOf CBit
      */
     SetAIValue(v) {
-        if (isNaN(v) == true) {return `SetAIValue - value is not a number`};
-        if (v>1 || v<0) {return `SetAIValue - value should be between 0..1`}
+        if (isNaN(v) == true) {return log.error(`CBit.SetAIValue - value is not a number`)};
+        if (v>1 || v<0) {return log.error(`CBit.SetAIValue - value should be between 0..1`)}
         this.AIValue = v
     }
     

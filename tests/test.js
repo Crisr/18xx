@@ -7,16 +7,17 @@ test('Core Bit tests', function (TC) {
         const CBit = new CB();  
         const myPawn = new Pawn('Cris');        
         TC.equal(typeof(CBit.GetLocation()), "object", "Should be an Object");
-        TC.equal(typeof(CBit.SetAIValue(2)), "string", "Error, value 2 is not valid, 0..1 is valid");
+        TC.equal(typeof(CBit.SetAIValue(2)), "undefined", "Error, value 2 is not valid, 0..1 is valid");
         TC.equal(CBit.GetAIValue(CBit.SetAIValue(0.5)), CBit.GetAIValue(), 'Set and Get AI values should be equal')
         TC.end();
 });
 
 test('Finance tests', function (TC) {        
-        const CBit = new CB();  
-        const myPawn = new Pawn('Cris');        
-        TC.equal(typeof(CBit.GetLocation()), "object", "Should be an Object");
-        TC.equal(typeof(CBit.SetAIValue(2)), "string", "Error, value 2 is not valid, 0..1 is valid");
-        TC.equal(CBit.GetAIValue(CBit.SetAIValue(0.5)), CBit.GetAIValue(), 'Set and Get AI values should be equal')
+        const myBank = new Finance.Bank();      
+        const Bills5 = myBank.addBills(`GAME`, 5, 1);
+        
+        // TC.equal(typeof(CBit.GetLocation()), "object", "Should be an Object");
+        // TC.equal(typeof(CBit.SetAIValue(2)), "string", "Error, value 2 is not valid, 0..1 is valid");
+        // TC.equal(CBit.GetAIValue(CBit.SetAIValue(0.5)), CBit.GetAIValue(), 'Set and Get AI values should be equal')
         TC.end();
 });
