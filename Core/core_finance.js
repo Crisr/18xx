@@ -27,9 +27,9 @@ class Bill extends cBit {
 class Bank extends cBit {
     constructor() {
         super();
-        this.BankVault = [];        
+        this.BankVault = [];
     }
-
+            
     /**
      * Adds number of bills of specified value to an array
      * 
@@ -58,28 +58,27 @@ class Bank extends cBit {
      * 
      * @memberOf Bank
      */
-    addBills2Bank (barr =[]) {
-        if (typeof(barr) !== 'array') {log.error('only arrays of type Bill will be added to the bank, use Bank.createBills')};
-        this.BankVault.concat(barr);
+    addBills2Bank (barr) {
+        if (Object.prototype.toString.call(barr) != "[object Array]") {log.error('only arrays of type Bill will be added to the bank, use Bank.createBills')};
+        this.BankVault = this.BankVault.concat(barr);        
     }
 
     /**
      * Returns curency for a specified holder (Player or AI)
      * 
      * @param {string} holding name of the owner; if none returns all bank currency in play, regardless of player
-     * @returns {array}
+     * @returns {array} attention, 
      * 
      * @memberOf Bank
      */
     getBankHoldings (holding) {
-        if (typeof holding == 'undefined') return this.BankVault 
+        if (typeof(holding) == 'undefined') return this.BankVault 
             else {
                 let res = [];
                 _.map(this.BankVault, function(item) {
-                    if (item.Owner == holding) res.push(item);
-                    return res;
+                    if (item.Owner == holding) res.push(item);                    
                 })
-
+                return res;
             }
     }
 
