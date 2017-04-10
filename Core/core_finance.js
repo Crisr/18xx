@@ -1,9 +1,9 @@
 // Finance boardgame bits
-const cBit = require('./core_bit.js');
+const CBit = require('./core_bit.js');
 const log = require('winston');
 const _ = require('underscore');
 
-class Bill extends cBit {
+class Bill extends CBit {
     /**
      * Creates an instance of Bill.
      * @param {string} o Owner of the bill
@@ -24,7 +24,7 @@ class Bill extends cBit {
     }
 }
 
-class Bank extends cBit {
+class Bank extends CBit {
     constructor() {
         super();
         this.BankVault = [];

@@ -1,2 +1,4 @@
 // {type:class}
-[bit]^[pawn]
+[CBit]^[Pawn]
+[CBit]^[Bill]
+[Bill]^[Bank]

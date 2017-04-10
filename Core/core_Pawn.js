@@ -1,9 +1,9 @@
 'use strict'
-const cBit = require('./core_bit.js')
+const CBit = require('./core_bit.js')
 const log = require('winston');
 
 //object Pawn is a basic gameboard bit that has an owner
-class cPawn extends cBit {
+class cPawn extends CBit {
     constructor (o) {
         super();
         this.pColor         = "white";    
