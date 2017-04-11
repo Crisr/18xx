@@ -11,6 +11,28 @@ class Hex {
         // array of objects describing other hex attributes (NOT items placed on top of the Hex)
         Contents: [];
     }
+    
+    /**
+     * Returns this.Vertexs[n]
+     * 
+     * @param {Number} n between 1-6
+     * @returns {String} Vertex id
+     * 
+     * @memberOf Hex
+     */
+    getVertex (n) {if (isNaN(n) || n<0 || n>5) {return log.error(`${n} should be between 0-5`)} 
+        else 
+        return this.Vertexes[n]
+    }
+    
+
+    getEdge (n) {if (isNaN(n) || n<0 || n>5) {return log.error(`${n} should be between 0-5`)} 
+        else
+        {return this.Edges[n]}
+    }
+
+    getContents ()  {return this.Contents}
+
 }
 
 module.exports = {Hex:Hex};
