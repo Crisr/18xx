@@ -1,12 +1,18 @@
 'use strict'
 const log = require('winston');
-const HexExp = require('../Core/core_hex');
+const Hex = require('../Core/core_hex').Hex;
 
-class MapHex extends HexExp.Hex {
-    constructor (hexParam) {
-        super(hexParam);
-
+class MapHex  {
+    constructor () {
+        this.Map1830 = [];
     }
+    addTile (o) {
+        this.Map1830.push(o);
+    }
+    getTile(index) {return this.Map1830[index]}
 }
+const map_1830 = new MapHex();
 
-module.exports = {HexExp:MapHex};
+map_1830.addTile(new Hex({Id:'A17'}));
+
+module.exports = {Map1830:map_1830};

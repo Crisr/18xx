@@ -2,7 +2,7 @@ const test = require('tape');
 const CB = require('../Core/core_bit');
 const Pawn = require('../Core/core_Pawn');
 const Finance = require('../Core/core_finance');
-const MapTile = require('../1830/1830Map');
+const Map1830 = require('../1830/1830Map').Map1830;
 
 test('Core Bit tests', function (TC) {        
         const CBit = new CB();  
@@ -23,9 +23,12 @@ test('Finance tests', function (TC) {
         myBank.addBills2Bank(myBank.createBills(`Player1`, 10, 1));
 
         const TESTBills = myBank.getBankHoldings('TEST');
-        TC.equal(Object.prototype.toString.call(TESTBills), "[object Array]", "getBankHoldings('TEST') should be an array");
+        TC.equal(Object.prototype.toString.call(TESTBills), "[object Array]", "getBankHoldings('TEST') should be an array");   
+        TC.end();
+});
 
-        const Tile = new MapTile.HexExp({Id:'A1'});
-        TC.equal(Tile.getId(), "A1", "Tile.GetId should return a string");
+test('Finance tests', function (TC) {
+        const Tile =  Map1830.getTile(0);
+        TC.equal(Tile.getId(), "A17", "Tile.GetId should return a string, A17");
         TC.end();
 });
