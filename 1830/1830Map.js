@@ -1,6 +1,7 @@
 'use strict'
 const log = require('winston');
 const Hex = require('../Core/core_hex').Hex;
+const _= require('underscore');
 
 class MapHex  {
     constructor () {
@@ -9,7 +10,7 @@ class MapHex  {
     /**
      * 
      * 
-     * @param {Object} o Id: String,  Pos:String (Axial Map Coords, 'x,y')
+     * @param {Object} o Id: String,  Pos:String Axial Map Coords, 'x,y'
      * 
      * @memberOf MapHex
      */
@@ -24,8 +25,38 @@ class MapHex  {
      * 
      * @memberOf MapHex
      */
-    getTile(index) {return this.Map1830[index]}
+    getHexByIndex(index) {return this.Map1830[index]}
+
+    /**
+     * 
+     * 
+     * @param {String} i the Id of the hex
+     * @returns Hex object
+     * 
+     * @memberOf MapHex
+     */
+    getHexById (i) {
+        return _.find(this.Map1830, a => {
+            return a.getContents().Id == i }
+            )
+    }
+
+    getNeighbors (h) {
+        let directions = [{x:1,y:0}, {x:1,y:-1}, {x:0,y:-1},{x:-1,y:0},{x:-1,y:1}, {x:0,y:1}];
+        let hexCoords = h.getNumPos();
+        let neighbors = [];
+
+        directions.forEach( d => {
+            this.Map1830.forEach (mh => {
+                if  ((mh.getNumPos().x == hexCoords.x+d.x) & (mh.getNumPos().y == hexCoords.y+d.y)) {neighbors.push(mh)};
+            })
+        })
+        return neighbors;
+    }
 }
+
+
+
 const map_1830 = new MapHex();
 // Start Axial Coordinates beginning with H2 (0,0), decrease as it goes up, increase as it goes right
 // http://www.redblobgames.com/grids/hexagons/  -  pointy topped
@@ -84,7 +115,7 @@ map_1830.addTile(new Hex({Id:'F12', Pos:'6,-2'}));
 map_1830.addTile(new Hex({Id:'E11', Pos:'6,-3'}));
 map_1830.addTile(new Hex({Id:'D10', Pos:'6,-4'}));
 map_1830.addTile(new Hex({Id:'C9', Pos:'6,-5'}));
-map_1830.addTile(new Hex({Id:'I15', Pos:'6,-5'}));
+map_1830.addTile(new Hex({Id:'I15', Pos:'6,1'}));
 
 map_1830.addTile(new Hex({Id:'H16', Pos:'7,0'}));
 map_1830.addTile(new Hex({Id:'G15', Pos:'7,-1'}));

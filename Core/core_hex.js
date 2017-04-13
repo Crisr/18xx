@@ -2,7 +2,8 @@
 const log = require('winston');
 
 /**
- * @param {String} i unique ID, ussually map index
+ * @param Id {String} i unique ID, ussually map index
+ * @param Pos: [String] 'x,y' - axial coordinates
  * 
  * @class Hex
  */
@@ -36,9 +37,35 @@ class Hex {
         {return this.Edges[n]}
     }
 
+    /**
+     * 
+     * 
+     * @returns [Object] all initialisation parameters
+     * 
+     * @memberOf Hex
+     */
     getContents ()  {return this.Contents}
 
+    /**
+     * 
+     * 
+     * @returns [String] Id of the hex
+     * 
+     * @memberOf Hex
+     */
     getId () {return this.Contents.Id}
+
+    /**
+     * Method returns the numerical Pos {x,y} values
+     * 
+     * @returns [Object] {x,y} where x, y are Numbers
+     * 
+     * @memberOf Hex
+     */
+    getNumPos () {
+        if (this.Contents.Pos == 'undefined') {return log.error(`${this.getId()} doesn't have a Pos defined'`)};
+        return {x: Number(this.Contents.Pos.split(',')[0]), y: Number(this.Contents.Pos.split(',')[1])};
+    }
 
 }
 
