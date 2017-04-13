@@ -1,5 +1,6 @@
 'use strict'
 const log = require('winston');
+const _= require('underscore');
 
 /**
  * @param Id {String} i unique ID, ussually map index
@@ -69,4 +70,57 @@ class Hex {
 
 }
 
-module.exports = {Hex:Hex};
+class HexMap {
+    constructor () {
+        this.MapArray = [];
+    }
+
+    /**
+     * 
+     * 
+     * @param {Hex[]} HMap - array of Hex
+     * @param {number} index - index number
+     * @returns {Hex}
+     * 
+     * @memberOf HexMap
+     */
+    getHexByIndex(HMap, index) {return HMap[index]}
+
+    /**
+     * 
+     * 
+     * @param {Hex[]} HMap - array of Hex
+     * @param {string} i - string Id
+     * @returns {Hex}
+     * 
+     * @memberOf HexMap
+     */
+    getHexById (HMap, i) {
+        return _.find(HMap, a => {
+            return a.getContents().Id == i }
+            )
+    }
+
+    /**
+     * Gets the neighbors if available
+     * 
+     * @param {Hex[]} HMap 
+     * @param {Hex} h 
+     * @returns {Hex[]}
+     * 
+     * @memberOf HexMap
+     */
+    getNeighbors (HMap, h) {
+        let directions = [{x:1,y:0}, {x:1,y:-1}, {x:0,y:-1},{x:-1,y:0},{x:-1,y:1}, {x:0,y:1}];
+        let hexCoords = h.getNumPos();
+        let neighbors = [];
+
+        directions.forEach( d => {
+            HMap.forEach (mh => {
+                if  ((mh.getNumPos().x == hexCoords.x+d.x) & (mh.getNumPos().y == hexCoords.y+d.y)) {neighbors.push(mh)};
+            })
+        })
+        return neighbors;
+    }
+}
+module.exports = {Hex:Hex, HexMap:HexMap};

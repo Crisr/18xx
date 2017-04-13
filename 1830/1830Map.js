@@ -1,11 +1,13 @@
 'use strict'
 const log = require('winston');
 const Hex = require('../Core/core_hex').Hex;
+const MapH =require('../Core/core_hex').HexMap;
 const _= require('underscore');
 
-class MapHex  {
+class MapHex extends MapH  {
     constructor () {
-        this.Map1830 = [];
+        super();
+        this.Map1830 =[];
     }
     /**
      * 
@@ -16,43 +18,9 @@ class MapHex  {
      */
     addTile (o) {
         this.Map1830.push(o);
-    }
-    /**
-     * 
-     * 
-     * @param {Number} index array index
-     * @returns 
-     * 
-     * @memberOf MapHex
-     */
-    getHexByIndex(index) {return this.Map1830[index]}
+    };
 
-    /**
-     * 
-     * 
-     * @param {String} i the Id of the hex
-     * @returns Hex object
-     * 
-     * @memberOf MapHex
-     */
-    getHexById (i) {
-        return _.find(this.Map1830, a => {
-            return a.getContents().Id == i }
-            )
-    }
-
-    getNeighbors (h) {
-        let directions = [{x:1,y:0}, {x:1,y:-1}, {x:0,y:-1},{x:-1,y:0},{x:-1,y:1}, {x:0,y:1}];
-        let hexCoords = h.getNumPos();
-        let neighbors = [];
-
-        directions.forEach( d => {
-            this.Map1830.forEach (mh => {
-                if  ((mh.getNumPos().x == hexCoords.x+d.x) & (mh.getNumPos().y == hexCoords.y+d.y)) {neighbors.push(mh)};
-            })
-        })
-        return neighbors;
-    }
+  get1830Map() {return this.Map1830};
 }
 
 

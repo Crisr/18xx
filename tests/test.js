@@ -28,12 +28,14 @@ test('Finance tests', function (TC) {
 });
 
 test('Map  tests', function (TC) {
-        const Tile =  Map1830.getHexByIndex(0);
+        let HMap = Map1830.get1830Map();
+        const Tile =  Map1830.getHexByIndex(HMap,0);
+
         TC.equal(typeof(Tile.getId()), "string", "Tile.GetId() should return a string");
         TC.equal(typeof(Tile.getNumPos()), "object", "Tile.getNumPos() should return an object");
-        TC.equal(typeof(Map1830.getHexById('I1')), "object", "Map1830.getTileById should return an object");
-        TC.equal(Map1830.getNeighbors(Map1830.getHexById('F12')).length, 6, "F12 map hex should have 6 neighbours");
-        TC.equal(Map1830.getNeighbors(Map1830.getHexById('C7')).length, 3, "C7  map hex should have 3 neighbours");
-        TC.equal(Map1830.getNeighbors(Map1830.getHexById('E3')).length, 5, "E3  map hex should have 5 neighbours");
+        TC.equal(typeof(Map1830.getHexById(HMap, 'I1')), "object", "Map1830.getTileById should return an object");
+        TC.equal(Map1830.getNeighbors(HMap, Map1830.getHexById(HMap, 'F12')).length, 6, "F12 map hex should have 6 neighbours");
+        TC.equal(Map1830.getNeighbors(HMap, Map1830.getHexById(HMap, 'C7')).length, 3, "C7  map hex should have 3 neighbours");
+        TC.equal(Map1830.getNeighbors(HMap, Map1830.getHexById(HMap, 'E3')).length, 5, "E3  map hex should have 5 neighbours");
         TC.end();
 });
