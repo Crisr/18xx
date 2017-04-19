@@ -3,6 +3,7 @@ const CB = require('../Core/core_bit');
 const Pawn = require('../Core/core_Pawn');
 const Finance = require('../Core/core_finance');
 const Map1830 = require('../1830/1830Map').Map1830;
+const TrackTiles1830 = require('../1830/tiles1830.js').Tiles1830;
 
 test('Core Bit tests', function (TC) {        
         const CBit = new CB();  
@@ -29,6 +30,7 @@ test('Finance tests', function (TC) {
 
 test('Map  tests', function (TC) {
         let HMap = Map1830.get1830Map();
+        let TrackTiles = TrackTiles1830.get1830TrackTiles();
         const Tile =  Map1830.getHexByIndex(HMap,0);
 
         TC.equal(typeof(Tile.getId()), "string", "Tile.GetId() should return a string");
