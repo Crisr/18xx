@@ -22,23 +22,44 @@ class Tiles1830 extends Hex {
 
 const tiles_1830 = new Tiles1830();
 
-for (let num=0;num<7;num++) {tiles_1830.addTrackTile({Id:'A1', Owner:'GAME', Connections:['edge0-edge3'], no:num, Color:'yellow', Upgrades:'B1,B2,B3,B8,B9,B10,B11', Rotated:[]})};
-for (let num=0;num<8;num++) {tiles_1830.addTrackTile({Id:'A2', Owner:'GAME', Connections:['edge3-edge5'], no:num, Color:'yellow', Upgrades:'B2,B4,B5,B8,B9,B12,B13,B14', Rotated:[]})};
-for (let num=0;num<4;num++) {tiles_1830.addTrackTile({Id:'A3', Owner:'GAME', Connections:['edge3-edge4'], no:num, Color:'yellow', Upgrades:'B3,B10,B11,B13,B14', Rotated:[]})};
-for (let num=0;num<2;num++) {tiles_1830.addTrackTile({Id:'A4', Owner:'GAME', Connections:['edge0-tS-edge3'], no:num, Color:'yellow', Upgrades:'B24,B25', Rotated:[]})};
-for (let num=0;num<2;num++) {tiles_1830.addTrackTile({Id:'A5', Owner:'GAME', Connections:['edge3-tS-edge5'], no:num, Color:'yellow', Upgrades:'B24,B25,B26,B27', Rotated:[]})};
-for (let num=0;num<2;num++) {tiles_1830.addTrackTile({Id:'A6', Owner:'GAME', Connections:['edge3-tS-edge4'], no:num, Color:'yellow', Upgrades:'B24,B25,B26', Rotated:[]})};
-for (let num=0;num<4;num++) {tiles_1830.addTrackTile({Id:'A7', Owner:'GAME', Connections:['edge0-bC-edge3'], no:num, Color:'yellow', Upgrades:'B35,B36,B37', Rotated:[]})};
-// for (let num=0;num<2;num++) {tiles_1830.addTrackTile({Id:'A8', Owner:'GAME', Connections:['edge3-bC-edge5'], no:num, Color:'yellow', Upgrades:'B35,B36,B37', Rotated:[]})};
-// for (let num=0;num<2;num++) {tiles_1830.addTrackTile({Id:'A9', Owner:'GAME', Connections:['edge3-bC-edge4'], no:num, Color:'yellow', Upgrades:'B35,B36,B37', Rotated:[]})};
-for (let num=0;num<1;num++) {tiles_1830.addTrackTile({Id:'A10', Owner:'GAME', Connections:['edge0-ts-edge3', 'edge2-tS-edge5'], no:num, Color:'yellow', Upgrades:'B28', Rotated:[]})};
-for (let num=0;num<1;num++) {tiles_1830.addTrackTile({Id:'A11', Owner:'GAME', Connections:['edge0-ts-edge3', 'edge1-tS-edge5'], no:num, Color:'yellow', Upgrades:'B29', Rotated:[]})};
-for (let num=0;num<1;num++) {tiles_1830.addTrackTile({Id:'A12', Owner:'GAME', Connections:['edge0-ts-edge3', 'edge1-tS-edge2'], no:num, Color:'yellow', Upgrades:'B30', Rotated:[]})};
-for (let num=0;num<1;num++) {tiles_1830.addTrackTile({Id:'A13', Owner:'GAME', Connections:['edge0-ts-edge2', 'edge3-tS-edge5'], no:num, Color:'yellow', Upgrades:'B28', Rotated:[]})};
-for (let num=0;num<1;num++) {tiles_1830.addTrackTile({Id:'A14', Owner:'GAME', Connections:['edge0-ts-edge2', 'edge1-tS-edge3'], no:num, Color:'yellow', Upgrades:'B30', Rotated:[]})};
-// for (let num=0;num<1;num++) {tiles_1830.addTrackTile({Id:'A15', Owner:'GAME', Connections:['edge3-ts-edge5', 'edge1-tS-edge2'], no:num, Color:'yellow', Upgrades:'B29', Rotated:[]})};
-// for (let num=0;num<1;num++) {tiles_1830.addTrackTile({Id:'A16', Owner:'GAME', Connections:['edge4-ts-edge5', 'edge1-tS-edge3'], no:num, Color:'yellow', Upgrades:'B29', Rotated:[]})};
-// for (let num=0;num<1;num++) {tiles_1830.addTrackTile({Id:'A17', Owner:'GAME', Connections:['edge0-ts-edge1', 'edge2-tS-edge3'], no:num, Color:'yellow', Upgrades:'B30', Rotated:[]})};
-// for (let num=0;num<1;num++) {tiles_1830.addTrackTile({Id:'A18', Owner:'GAME', Connections:['edge4-ts-edge5', 'edge2-tS-edge3'], no:num, Color:'yellow', Upgrades:'B28', Rotated:[]})};
+for (let num=0;num<7;num++) {tiles_1830.addTrackTile({Id:'A1', Owner:'GAME', Connections:['edge0-edge3'], no:num, Color:'yellow', Upgrades:'B1,B2,B3,B8,B9,B10,B11', Rotated:0})};
+for (let num=0;num<8;num++) {tiles_1830.addTrackTile({Id:'A2', Owner:'GAME', Connections:['edge3-edge5'], no:num, Color:'yellow', Upgrades:'B2,B4,B5,B8,B9,B12,B13,B14', Rotated:0})};
+for (let num=0;num<4;num++) {tiles_1830.addTrackTile({Id:'A3', Owner:'GAME', Connections:['edge3-edge4'], no:num, Color:'yellow', Upgrades:'B3,B10,B11,B13,B14', Rotated:0})};
+for (let num=0;num<2;num++) {tiles_1830.addTrackTile({Id:'A4', Owner:'GAME', Connections:['edge0-tS-edge3'], no:num, Color:'yellow', Upgrades:'B24,B25', Value:10, Rotated:0})};
+for (let num=0;num<2;num++) {tiles_1830.addTrackTile({Id:'A5', Owner:'GAME', Connections:['edge3-tS-edge5'], no:num, Color:'yellow', Upgrades:'B24,B25,B26,B27',  Value:10, Rotated:0})};
+for (let num=0;num<2;num++) {tiles_1830.addTrackTile({Id:'A6', Owner:'GAME', Connections:['edge3-tS-edge4'], no:num, Color:'yellow', Upgrades:'B24,B25,B26', Value:10,  Rotated:0})};
+for (let num=0;num<4;num++) {tiles_1830.addTrackTile({Id:'A7', Owner:'GAME', Connections:['edge0-bC-edge3'], no:num, Color:'yellow', Upgrades:'B35,B36,B37', Value:20, Rotated:0})};
+// for (let num=0;num<2;num++) {tiles_1830.addTrackTile({Id:'A8', Owner:'GAME', Connections:['edge3-bC-edge5'], no:num, Color:'yellow', Upgrades:'B35,B36,B37', Rotated:0})};
+// for (let num=0;num<2;num++) {tiles_1830.addTrackTile({Id:'A9', Owner:'GAME', Connections:['edge3-bC-edge4'], no:num, Color:'yellow', Upgrades:'B35,B36,B37', Rotated:0})};
+for (let num=0;num<1;num++) {tiles_1830.addTrackTile({Id:'A10', Owner:'GAME', Connections:['edge0-ts-edge3', 'edge2-tS-edge5'], no:num, Color:'yellow', Upgrades:'B28', Value:10, Rotated:0})};
+for (let num=0;num<1;num++) {tiles_1830.addTrackTile({Id:'A11', Owner:'GAME', Connections:['edge0-ts-edge3', 'edge1-tS-edge5'], no:num, Color:'yellow', Upgrades:'B29', Value:10, Rotated:0})};
+for (let num=0;num<1;num++) {tiles_1830.addTrackTile({Id:'A12', Owner:'GAME', Connections:['edge0-ts-edge3', 'edge1-tS-edge2'], no:num, Color:'yellow', Upgrades:'B30', Value:10, Rotated:0})};
+for (let num=0;num<1;num++) {tiles_1830.addTrackTile({Id:'A13', Owner:'GAME', Connections:['edge0-ts-edge2', 'edge3-tS-edge5'], no:num, Color:'yellow', Upgrades:'B28', Value:10, Rotated:0})};
+for (let num=0;num<1;num++) {tiles_1830.addTrackTile({Id:'A14', Owner:'GAME', Connections:['edge0-ts-edge2', 'edge1-tS-edge3'], no:num, Color:'yellow', Upgrades:'B30',Value:10,  Rotated:0})};
+// for (let num=0;num<1;num++) {tiles_1830.addTrackTile({Id:'A15', Owner:'GAME', Connections:['edge3-ts-edge5', 'edge1-tS-edge2'], no:num, Color:'yellow', Upgrades:'B29', Value:10, Rotated:0})};
+// for (let num=0;num<1;num++) {tiles_1830.addTrackTile({Id:'A16', Owner:'GAME', Connections:['edge4-ts-edge5', 'edge1-tS-edge3'], no:num, Color:'yellow', Upgrades:'B29', Value:10, Rotated:0})};
+// for (let num=0;num<1;num++) {tiles_1830.addTrackTile({Id:'A17', Owner:'GAME', Connections:['edge0-ts-edge1', 'edge2-tS-edge3'], no:num, Color:'yellow', Upgrades:'B30', Value:10, Rotated:0})};
+// for (let num=0;num<1;num++) {tiles_1830.addTrackTile({Id:'A18', Owner:'GAME', Connections:['edge4-ts-edge5', 'edge2-tS-edge3'], no:num, Color:'yellow', Upgrades:'B28', Value:10, Rotated:0})};
+for (let num=0;num<2;num++) {tiles_1830.addTrackTile({Id:'bb1', Owner:'GAME', Connections:['edge1-bC-edge3', 'edge3-bC-edge5',  'edge1-bC-edge5'], no:num, Color:'green', Upgrades:'bb5,bb6,bb7', Value:20, Rotated:0})};
+// for (let num=0;num<2;num++) {tiles_1830.addTrackTile({Id:'bb2', Owner:'GAME', Connections:['edge1-bC-bC-edge3', 'edge3-bC-bC-edge5',  'edge1-bC-bC-edge5'], no:num, Color:'green', Upgrades:'bb5,bb6,bb7', Value:20, Rotated:0})};
+// for (let num=0;num<2;num++) {tiles_1830.addTrackTile({Id:'bb5', Owner:'GAME', Connections:['edge0-bC-edge1', 'edge0-bC-edge5',  'edge1-bC-edge5',  'edge0-bC-edge3',  'edge1-bC-edge3',  'edge5-bC-edge3'], no:num, Color:'brown', Upgrades:'', Value:20, Rotated:0})};
+// for (let num=0;num<1;num++) {tiles_1830.addTrackTile({Id:'bb6', Owner:'GAME', Connections:['edge0-bC-bC-bC-edge1', 'edge0-bC-bC-bC-edge5',  'edge1-bC-bC-bC-edge5',  'edge0-bC-bC-bC-edge3',  'edge1-bC-bC-bC-edge3',  'edge5-bC-bC-bC-edge3'], no:num, Color:'brown', Upgrades:'', Value:20, Rotated:0})};
+// for (let num=0;num<1;num++) {tiles_1830.addTrackTile({Id:'bb7', Owner:'GAME', Connections:['edge0-bC-bC-edge1', 'edge0-bC-bC-edge5',  'edge1-bC-bC-edge5',  'edge0-bC-bC-edge3',  'edge1-bC-bC-edge3',  'edge5-bC-bC-edge3'], no:num, Color:'brown', Upgrades:'', Value:20, Rotated:0})};
+// for (let num=0;num<1;num++) {tiles_1830.addTrackTile({Id:'to1', Owner:'GAME', Connections:['edge0-bC-edge1', 'edge0-bC-edge5',  'edge1-bC-edge5',  'edge3-bC-edge4',  'edge2-bC-edge3',  'edge2-bC-edge4'], no:num, Color:'brown', Upgrades:'', DesignatedHex:'D10', Value:20, Rotated:0})};
+
+for (let num=0;num<1;num++) {tiles_1830.addTrackTile({Id:'B1', Owner:'GAME', Connections:['edge0-edge3', 'edge2-edge5'], no:num, Color:'green', Upgrades:'C5,C6', Rotated:0})};
+for (let num=0;num<1;num++) {tiles_1830.addTrackTile({Id:'B2', Owner:'GAME', Connections:['edge0-edge3', 'edge1-edge5'], no:num, Color:'green', Upgrades:'C7,C8', Rotated:0})};
+for (let num=0;num<1;num++) {tiles_1830.addTrackTile({Id:'B3', Owner:'GAME', Connections:['edge0-edge3', 'edge1-edge2'], no:num, Color:'green', Upgrades:'C9', Rotated:0})};
+// for (let num=0;num<1;num++) {tiles_1830.addTrackTile({Id:'B4', Owner:'GAME', Connections:['edge0-edge2', 'edge3-edge5'], no:num, Color:'green', Upgrades:'C5', Rotated:0})};
+for (let num=0;num<1;num++) {tiles_1830.addTrackTile({Id:'B5', Owner:'GAME', Connections:['edge0-edge2', 'edge1-edge3'], no:num, Color:'green', Upgrades:'C9,C10', Rotated:0})};
+for (let num=0;num<3;num++) {tiles_1830.addTrackTile({Id:'B8', Owner:'GAME', Connections:['edge0-edge3', 'edge1-edge3'], no:num, Color:'green', Upgrades:'C1,C5,C7,C9', Rotated:0})};
+for (let num=0;num<3;num++) {tiles_1830.addTrackTile({Id:'B9', Owner:'GAME', Connections:['edge0-edge3', 'edge0-edge5'], no:num, Color:'green', Upgrades:'C2,C5,C8,C9', Rotated:0})};
+for (let num=0;num<1;num++) {tiles_1830.addTrackTile({Id:'B10', Owner:'GAME', Connections:['edge0-edge3', 'edge2-edge3'], no:num, Color:'green', Upgrades:'C2,C6,C7', Rotated:0})};
+for (let num=0;num<1;num++) {tiles_1830.addTrackTile({Id:'B11', Owner:'GAME', Connections:['edge0-edge3', 'edge3-edge4'], no:num, Color:'green', Upgrades:'C1,C6,C8', Rotated:0})};
+for (let num=0;num<1;num++) {tiles_1830.addTrackTile({Id:'B12', Owner:'GAME', Connections:['edge1-edge3', 'edge3-edge5'], no:num, Color:'green', Upgrades:'C3,C7,C8', Rotated:0})};
+for (let num=0;num<1;num++) {tiles_1830.addTrackTile({Id:'B13', Owner:'GAME', Connections:['edge1-edge3', 'edge2-edge3'], no:num, Color:'green', Upgrades:'C4,C8,C10', Rotated:0})};
+for (let num=0;num<1;num++) {tiles_1830.addTrackTile({Id:'B14', Owner:'GAME', Connections:['edge3-edge4', 'edge3-edge5'], no:num, Color:'green', Upgrades:'C4,C7,C10', Rotated:0})};
+// for (let num=0;num<1;num++) {tiles_1830.addTrackTile({Id:'B24', Owner:'GAME', Connections:['edge0-sC-edge3', 'edge1-sC-edge3','edge0-sC-edge1'], no:num, Color:'green', Upgrades:'C11,C12,C13', Value:0, Rotated:0})};
+
 
 module.exports = {Tiles1830:tiles_1830};
