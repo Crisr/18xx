@@ -4,6 +4,7 @@ const Pawn = require('../Core/core_Pawn');
 const Finance = require('../Core/core_finance');
 const Map1830 = require('../1830/1830Map').Map1830;
 const Shares1830 = require('../1830/1830shares').Shares1830;
+const PComp1830 = require('../1830/1830shares').PCompanies1830;
 const TrackTiles1830 = require('../1830/1830tiles.js').Tiles1830;
 
 test('Core Bit tests', function (TC) {        
@@ -34,6 +35,7 @@ test('Map  tests', function (TC) {
         let TrackTiles = TrackTiles1830.get1830TrackTiles();
         const Tile =  Map1830.getHexByIndex(HMap,0);
         let shares = Shares1830.get1830Shares();
+        let pcomp = PComp1830.get1830PCompanies();
 
         TC.equal(typeof(Tile.getId()), "string", "Tile.GetId() should return a string");
         TC.equal(typeof(Tile.getNumPos()), "object", "Tile.getNumPos() should return an object");
