@@ -4,7 +4,7 @@
   "description": "Core AI for boardgames",
   "main": "index.js",
   "scripts": {
-    "test": "node index1.js"
+    "test": "node index.js"
   },
   "compilerOptions": {
     "target": "ES6",
