@@ -8,7 +8,10 @@ const PublicCompany = types.model("PublicCompany", {
 
 const PublicCompanies = types.model("PublicCompanies", {
   PCompaniesArray: types.array(PublicCompany)
-});
+})
+.create({
+  PCompaniesArray : Shares.PCompanies1830
+})
 
 const Store1830 = types.model("Store1830", {
   PCompanies: PublicCompanies
