@@ -4,7 +4,7 @@ class Layout extends Component {
   render() {
     return (
       <div>
-        <p>Layout</p>
+        <p>Auction</p>
       </div>
     );
   }
