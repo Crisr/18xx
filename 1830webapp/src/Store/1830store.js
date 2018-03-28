@@ -11,6 +11,7 @@ const PrivateCompanies = types.model("PrivateCompanies", {
 })
 .actions(self => ({
   addComp: (Comp) => {
+      const PrivateComp = PrivateCompany.create(Comp)
       self.PrivateCompanies.push(Comp)
     } 
 }))
@@ -20,8 +21,6 @@ const Store1830 = types.model("Store1830", {
 })
 
 const names = Shares.PCompanies1830.PCompanies1830.map(x=>x.Id)
-const PrivateComp = PrivateCompany.create({PCname:"", PCShares:0})
-// const Store = PrivateCompanies.create(PrivateComp)
-// names.forEach((x)=>{Store.addComp({PCname:x, PCShares:0 })})
+names.forEach((x)=>{PrivateCompanies.addComp({PCname:x, PCShares:0 })})
 
 export default Store1830;
