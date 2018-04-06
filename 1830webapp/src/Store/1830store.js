@@ -1,5 +1,6 @@
 import { types } from "mobx-state-tree";
 import Shares from "../1830/1830shares";
+// import _ from "lodash";
 
 const PrivateCompany = types.model("PrivateCompany", {
   PCname: types.string,
@@ -13,6 +14,14 @@ const PrivateCompanies = types
   .actions(self => ({
     addComp(comp) {
       self.comps.push(comp);
+    }
+  }))
+  .views(self => ({
+    get compname() {
+      return 1;
+    },
+    get compno() {
+      return self.comps.length;
     }
   }))
   .create({
