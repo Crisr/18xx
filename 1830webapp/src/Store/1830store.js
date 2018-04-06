@@ -24,5 +24,4 @@ names.forEach(x => {
   PrivateCompanies.addComp({ PCname: x, PCShares: 0 });
 });
 
-console.log(JSON.stringify(PrivateCompanies.toJSON(), null, 2));
 export default { PrivateCompanies };

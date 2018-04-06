@@ -11,6 +11,14 @@ const columns = _.times(16, i => (
 const AuctionGrid = () => <Grid>{columns}</Grid>;
 
 class AuctionLayout extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      text: ""
+    };
+  }
+
   render() {
     return <div>{AuctionGrid()}</div>;
   }
