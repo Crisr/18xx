@@ -1,13 +1,19 @@
 import React, { Component } from "react";
+import { Grid, Image } from "semantic-ui-react";
+import _ from "lodash";
 
-class Layout extends Component {
+const columns = _.times(16, i => (
+  <Grid.Column key={i}>
+    <Image src={require("../webassets/tempicons/image.png")} />
+  </Grid.Column>
+));
+
+const AuctionGrid = () => <Grid>{columns}</Grid>;
+
+class AuctionLayout extends Component {
   render() {
-    return (
-      <div>
-        <p>Auction</p>
-      </div>
-    );
+    return <div>{AuctionGrid()}</div>;
   }
 }
 
-export default Layout;
+export default AuctionLayout;

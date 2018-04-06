@@ -6,7 +6,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Auction Store1830 = {Store} />
+        <Auction Store1830={Store} />
       </div>
     );
   }
