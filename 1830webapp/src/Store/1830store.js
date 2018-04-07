@@ -1,5 +1,7 @@
 import { types } from "mobx-state-tree";
 import Shares from "../1830/1830shares";
+import Players1830 from "../1830/1830Players";
+
 // import _ from "lodash";
 
 const PrivateCompany = types.model("PrivateCompany", {
@@ -28,9 +30,13 @@ const PrivateCompanies = types
     comps: []
   });
 
+const PlayersStore = types.model("PlayersStore", {
+  AllPlayersArray: types.array
+});
+
 const names = Shares.PCompanies1830.PCompanies1830.map(x => x.Id);
 names.forEach(x => {
   PrivateCompanies.addComp({ PCname: x, PCShares: 0 });
 });
 
-export default { PrivateCompanies };
+export default { PrivateCompanies, PlayersStore };
