@@ -1,7 +1,7 @@
 const CBit = require("./core_bit.js");
 
 class cPlayer extends CBit {
-  constructor(p) {
+  constructor(p = { PType: String, money: Number, PState: String }) {
     super();
     this.playerType = p.PType; //can be 'Human' or 'AI'
     this.playerMoney = p.money;

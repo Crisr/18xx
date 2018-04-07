@@ -30,9 +30,16 @@ const PrivateCompanies = types
     comps: []
   });
 
-const PlayersStore = types.model("PlayersStore", {
-  AllPlayersArray: types.array
-});
+const PlayersStore = types
+  .model("PlayersStore", {
+    AllPlayersArray: types.array(),
+    AIPlayers: types.number,
+    HumanPlayers: types.number,
+    Validated: false
+  })
+  .create({
+    AllPlayersArray: []
+  });
 
 const names = Shares.PCompanies1830.PCompanies1830.map(x => x.Id);
 names.forEach(x => {

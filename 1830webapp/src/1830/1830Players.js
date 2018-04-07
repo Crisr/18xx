@@ -12,7 +12,7 @@ class Players1830 extends CPlayers {
   } //max 6 Players for 1830
   get ruleMinPlayers() {
     return 3;
-  } //min 3 Players
+  } //min 3 Players for 1830
   CreatePlayers(p) {
     const totalPlayers = p.Players + p.AI;
     let MoneyToGive = 0;
