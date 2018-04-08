@@ -1,6 +1,7 @@
 import { types } from "mobx-state-tree";
-import Rules1830 from "../1830/rules1830";
+// import { Rules as Rules1830 } from "../1830/rules1830";
 import _ from "lodash";
+const Rules1830 = require("../1830/rules1830").Rules;
 
 const Player = types.model("Player", {
   playerType: types.string,
@@ -60,7 +61,7 @@ const CreatePlayers = (p = { Players: Number, AI: Number }) => {
       playerType: "Human",
       playerMoney: MoneyToGive,
       playerState: "Playing",
-      playerName: "Player"
+      playerName: "Player" + index.toString()
     });
   }
   for (let index = 0; index < p.AI; index++) {
@@ -68,7 +69,7 @@ const CreatePlayers = (p = { Players: Number, AI: Number }) => {
       playerType: "AI",
       playerMoney: MoneyToGive,
       playerState: "Playing",
-      playerName: "AI"
+      playerName: "AI" + index.toString()
     });
   }
 };
