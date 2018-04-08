@@ -1,11 +1,14 @@
 const CBit = require("./core_bit.js");
 
 class cPlayer extends CBit {
-  constructor(p = { PType: String, money: Number, PState: String }) {
+  constructor(
+    p = { PType: String, money: Number, PState: String, Name: String }
+  ) {
     super();
     this.playerType = p.PType; //can be 'Human' or 'AI'
     this.playerMoney = p.money;
     this.playerState = p.PState; // can be "Playing"/"Bankrupt"/etc
+    this.Name = p.Name;
   }
 }
 
@@ -29,6 +32,12 @@ class cGamePlayers {
   }
   get GetNumberOfPlayers() {
     return this.GamepPlayers.lenght;
+  }
+  get GetName() {
+    return this.Name;
+  }
+  set SetName(s) {
+    this.Name = s;
   }
 }
 
