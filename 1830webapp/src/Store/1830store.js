@@ -16,6 +16,6 @@ const Players = Players1830Store.GamePlayers;
 //initialise game state
 const GameState = GameStateInstance.create();
 // GameState.setState({ GamePhase: "Auction", ActivePlayer: 0 });
-// console.log(GameState.ActivePlayer); ll l
+// console.log(GameState.ActivePlayer);
 
 export default { PrivateCompanies, Players, GameState };
